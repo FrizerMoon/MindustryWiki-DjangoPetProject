@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+<div class = 'container'>
+<aside>
+  <img class="logo" src="{% static 'main/img/Mindustry.icon.svg.webp' %}" alt="">
+<p>Неофіційна вікі по міндастрі</p>
+</aside>
+<main class = 'content'>
+  <img class="background" src="{% static 'main/img/image_2026-07-25_18-35-08.png' %}" alt="Беграунд">
+  {% block text %}
+  <h1>Сектора</h1>
+  {% for i in Sectors %}
+  <div class = 'container'>
+  <a href="{% url 'Sector_view' i.pk %}"><p>{{ i.title }}</p></a>
+  <img class ='iconsector' src="{{ i.image }}" alt="">
+  </div>
+  {% endfor %}
+  {% endblock %}
+</main>
+</div>
+</body>
+</html>
