@@ -1,7 +1,7 @@
 aside {
  width: 15%;
- background: #eee;
  height: 100vh;
+ background: #171721;
 }
 
 .logo {
@@ -28,17 +28,37 @@ aside p {
 }
 
 h1 {
-  padding-left: 10px;
+  padding-left: 13px;
+  color: white;
 }
 
-p {
+.namelogo {
   padding-left: 20px;
+  color: white;
+}
+
+.namesector {
+  padding-left: 20px;
+  color: white;
+  transition: all .4s ease;
 }
 
 .iconsector {
   width: 30px;
   height: 30px;
-  padding-top: 10px;
+  padding-top: 25px;
   margin-left: 10px;
 }
 
+body {
+  background: #242938;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,.namesector:hover {
+  color: #7a55dc;
+  text-decoration: none;
+}

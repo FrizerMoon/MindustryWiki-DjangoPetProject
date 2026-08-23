@@ -1,5 +1,14 @@
 from django.shortcuts import render
-from sectors.models import Sectors
-def index(request):
-    SectorsList = Sectors.objects.all()
-    return render(request,'main/layout.html',{'Sectors': SectorsList})
+from django.views.generic import ListView, DetailView
+from .models import ModelInfo 
+
+class SectorList(ListView):
+    model = ModelInfo
+    template_name = 'main/layout.html'
+    context_object_name = 'sectors'
+
+
+class SectorInfo(DetailView):
+    model = ModelInfo
+    template_name = "main/sector.html"
+    context_object_name = 'sector'

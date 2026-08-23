@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import ModelInfo
 
-# Register your models here.
+@admin.register(ModelInfo)
+class SectorAdmin(admin.ModelAdmin):
+    list_display = ['name','slug','description','img']
+    prepopulated_fields = {'slug':['name']}
