@@ -1,0 +1,9 @@
+{% extends 'main/layout.html' %}
+
+{% block text %}
+  <div class = 'container'>
+  <h1>{{sector.name}}</h1>
+  <img class = 'iconsector' src="{{ sector.img.url }}" alt="{{ sector.name }}">
+  </div>
+  <h1>{{sector.description}}</h1>
+{% endblock %}
