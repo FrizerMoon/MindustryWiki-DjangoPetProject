@@ -12,16 +12,20 @@
 <body>
 <div class = 'container'>
 <aside>
+  <div class = 'container'>
   <img class="logo" src="{% static 'main/img/Mindustry.icon.svg.webp' %}" alt="">
-<p class = 'namelogo'>Неофіційна вікі по міндастрі</p>
+  <p class = 'namelogo'>Неофіційна вікі<br>по міндастрі</br></p>
+  </div>
+<a href="{% url 'register'%}"><p class = 'register'>Реєстрація</p></a>
 </aside>
 <main class = 'content'>
   <img class="background" src="{% static 'main/img/image_2026-07-25_18-35-08.png' %}" alt="Беграунд">
   {% block text %}
-  <h1>Сектора:</h1>
+  <h1>Сектора</h1>
   <div class = 'container'>
     {% for sector in sectors %}
     <a href="{% url 'sectorinfo' sector.slug %}"><p class = 'namesector'>{{sector.name}}</p></a>
+    <img class = 'iconlist' src="{{sector.img.url}}" alt="">
     {% endfor %}
   </div>
   {% endblock %}

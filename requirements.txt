@@ -1,0 +1,6 @@
+asgiref==3.12.1
+Django==6.1
+dotenv==0.9.9
+pillow==12.3.0
+python-dotenv==1.2.3
+sqlparse==0.6.0
