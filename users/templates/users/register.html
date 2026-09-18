@@ -9,6 +9,13 @@
     <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 </head>
+{% block content %}
+    <form method="POST" class="form-group">
+	    {% csrf_token %}
+      {{ form.as_p }}
+	    <button type="submit" class="btn btn-success">Зареєструватися</button>
+    </form>
+{% endblock %}
 <body>
 </body>
 </html>
