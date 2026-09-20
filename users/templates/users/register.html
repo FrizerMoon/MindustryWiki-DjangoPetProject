@@ -7,14 +7,32 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% block title %}{% endblock %}</title>
-<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/users.css' %}">
 </head>
 {% block content %}
-    <form method="POST" class="form-group">
-	    {% csrf_token %}
-      {{ form.as_p }}
-	    <button type="submit" class="btn btn-success">Зареєструватися</button>
-    </form>
+<form method="POST" class="">
+{% csrf_token %}
+<p>
+    <label for="id_username">Ім'я користувача:</label>
+    <input type="text" name="username" maxlength="150" autofocus required aria-describedby="id_username_helptext" id="id_username">
+</p>
+
+<p>
+    <label for="id_email">Email:</label>
+    <input type="email" name="email" maxlength="320" required id="id_email">
+</p>
+
+<p>
+    <label for="id_password1">Пароль:</label>
+    <input type="password" name="password1" autocomplete="new-password" required aria-describedby="id_password1_helptext" id="id_password1">
+</p>
+
+<p>
+    <label for="id_password2">Підтвердження пароля:</label>
+    <input type="password" name="password2" autocomplete="new-password" required aria-describedby="id_password2_helptext" id="id_password2">
+</p>
+	  <button type="submit" class="">Зареєструватися</button>
+</form>
 {% endblock %}
 <body>
 </body>
